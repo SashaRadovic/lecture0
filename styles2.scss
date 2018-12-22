@@ -1,0 +1,94 @@
+
+$headercolor: lightblue;
+
+%head {
+    background-color: $headercolor;
+}
+.header{
+    background-color: $headercolor;
+}
+.logo{
+    @extend %head;
+    text-align: center;
+
+
+    padding: 5px;
+}
+.navbar{
+    @extend %head;
+
+    display:flex;
+    justify-content: flex-start;
+     a {
+        color:white;
+        text-align: center;
+        font-weight: bold;
+        text-decoration: none;
+        text-transform: uppercase;
+        padding: 14px 28px;
+
+
+    }
+}
+
+
+
+#nav-toggle {
+    display: none;
+}
+
+.nav-toggle-label {
+    position: flex;
+    display:none;
+}
+
+.navbar a:hover {
+    background: white;
+    color:black;
+
+}
+
+.nav-toggle-label{
+    @extend %head;
+    color:white;
+    padding: 10px;
+    display: flex;
+    justify-content: flex-end;
+
+}
+.nav-toggle-label label {
+    @extend %head;
+    width: 2em;
+    cursor: pointer;
+    border-radius: 6px;
+    align-items: center;
+    justify-content:center;
+
+
+}
+
+
+@media screen and (max-width:800px){
+    .navbar{
+        flex-direction:column;
+        display:none;
+    }
+    #nav-toggle:checked ~ .navbar{
+        display:flex;
+    }
+
+.nav-toggle-label label span{
+    background-color: white;
+    height: 3px;
+    color:black;
+    width: 80%;
+    margin: 4px 0px;
+    display: flex;
+    flex-direction: column;
+}
+}
+
+p {
+    justify-content:space-around;
+
+}
